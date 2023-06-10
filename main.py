@@ -43,6 +43,7 @@ elif type == "2": #summary data
             temp = {str(row[0].value): [row[1].value, row[2].value]}
             dict.update(temp)
         else:
+            dict[row[0].value].append("split")
             dict[row[0].value].append(row[1].value)
             dict[row[0].value].append(row[2].value)
     for key, value in dict.items():
