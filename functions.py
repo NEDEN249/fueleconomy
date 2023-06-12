@@ -1,6 +1,8 @@
 from openpyxl import Workbook, load_workbook
 from datetime import date
+import xlsxwriter
 import matplotlib.pyplot as plt
+import os
 
 #Current Date in DD/MM/YYYY format
 today = date.today()
@@ -11,11 +13,22 @@ def calculate_fuel_economy(kilometresDriven, litresUsed): # Function to calculat
     return fuelEconomy
 
 def insert_new_data(d,f): #Function to insert new data into spreadsheet
-    book = load_workbook('testDocument.xlsx') # Load workbook
-    sheet = book.active # Load active sheet
+    try:
+        book = load_workbook('fuelEconomyData.xlsx') # Load workbook
+        sheet = book.active # Load active sheet
+    except:
+        print("There is no appropriate excel file in the directory, creating a new one now")
+        workbook = xlsxwriter.Workbook('fuelEconomyData.xlsx') # Create new workbook
+        worksheet = workbook.add_worksheet() # Create new worksheet
+        worksheet.write("A1", 'Date')# Add column headers
+        worksheet.write("B1", 'Distance')
+        worksheet.write("C1", 'Fuel')
+        workbook.close() # Close workbook
+        book = load_workbook('fuelEconomyData.xlsx')
+        sheet = book.active
     new_data = (today1, int(d), int(f))
     sheet.append(new_data)
-    book.save('testDocument.xlsx')
+    book.save('fuelEconomyData.xlsx')
     print("Data successfully added to spreadsheet")
 
 def printFuelEconomy(fuelEconomy):
@@ -33,7 +46,7 @@ def returnFuelEconomy():
     #elif answer == "no": -> ask if want to see summary data 
     
 def generateSummaryData():
-    book = load_workbook('testDocument.xlsx') # Load workbook
+    book = load_workbook('fuelEconomyData.xlsx') # Load workbook
     sheet = book.active # Load active sheet
     dict = {}
     for row in sheet.iter_rows():
