@@ -1,7 +1,6 @@
 Things to do:
     More forms of summary data and then the ability to choose which ones to include in the report
     Ability to select a specific date range
-    Ability to generate a file if a file is not already present
-    Ability to select file from a directory
+    Ability to select specific file from a directory if multiple present
     More interactive way to use the program rather then via the command line -> implement GUI
 
