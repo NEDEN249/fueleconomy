@@ -1,24 +1,10 @@
-# import functions # Import functions.py file
-
-# def main():
-#     print("Welcome to the Fuel Economy Calculator") # Welcome message
-#     print("=======================================")
-#     print("What would you like to do?")
-#     print("1. Calculate fuel economy")
-#     print("2. Get Summary Data From Spreadsheet")
-#     type = input("\nPlease enter 1 or 2: ") # User input to choose between 1 or 2
-#     if type == "1":
-#         functions.returnFuelEconomy()
-#     elif type == "2": #summary data 
-#         functions.generateSummaryData()
-
-# if __name__ == "__main__":
-#     main()
 import functions # Import functions.py file
 
 def main():
-    while True:  # Run the loop indefinitely until the user chooses to exit
-        print("What would you like to do?")
+    while True:  # Run the loop indefinitely until the user chooses to exit\
+        print("Welcome to the Fuel Economy Calculator") # Welcome message
+        print("=======================================")
+        print("What would you like to do from the following?")
         print("1. Calculate fuel economy")
         print("2. Get Summary Data From Spreadsheet")
         print("3. Exit")
@@ -27,7 +13,7 @@ def main():
         if choice == "1":
             functions.returnFuelEconomy()
             while True:  # Nested loop for asking if the user wants to input more data
-                more_data = input("Do you have more data you wish to input? (yes/no): ")
+                more_data = input("Do you have more data you wish to input? Enter 'yes' or 'no':")
                 if more_data.lower() == "no":
                     break  # Break the nested loop if the user doesn't want to input more data
                 elif more_data.lower() == "yes":
