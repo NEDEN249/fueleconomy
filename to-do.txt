@@ -1,8 +1,3 @@
 Things to do:
-    More forms of summary data and then the ability to choose which ones to include in the report
-    Ability to select a specific date range
     Ability to select specific file from a directory if multiple present
-    More interactive way to use the program rather then via the command line -> implement GUI
-    Replace current statistics option with the streamlit one -> automate command line argument to run the streamlit app
-        https://www.tutorialspoint.com/command-line-automation-in-python#:~:text=There%20are%20two%20ways%20to,write%20the%20command%20to%20perform. 
 
