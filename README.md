@@ -16,4 +16,5 @@ pip install pandas
 
 
 then simply run main.py and follow the instructions
+
 python main.py
