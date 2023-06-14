@@ -2,6 +2,7 @@ from openpyxl import Workbook, load_workbook
 from datetime import date
 import xlsxwriter
 import matplotlib.pyplot as plt
+import os
 
 #Current Date in DD/MM/YYYY format
 today = date.today()
@@ -56,29 +57,4 @@ def returnFuelEconomy():
     #elif answer == "no": -> ask if want to see summary data 
     
 def generateSummaryData():
-    book = load_workbook('fuelEconomyData.xlsx') # Load workbook
-    sheet = book.active # Load active sheet
-    dict = {}
-    for row in sheet.iter_rows():
-        if row[0].value == "Date":
-            continue # Skip first row
-        if row[0].value not in dict.keys(): # Insert data into dictionary
-            temp = {str(row[0].value): [row[1].value, row[2].value]}
-            dict.update(temp)
-        else: # If date already exists in dictionary, append the data to the list
-            dict[row[0].value].append("split")
-            dict[row[0].value].append(row[1].value)
-            dict[row[0].value].append(row[2].value)
-    #for key, value in dict.items():
-        #print(key, value)
-    averages = []
-    for key, value in dict.items():
-        #print(key)
-        if key == "Date":
-            continue # Skip the first row
-        #print(value[0])
-        #print(value[1])
-        averages.append(calculate_fuel_economy(int(value[0]), int(value[1])))
-    fig,ax = plt.subplots() # creates graph using data
-    ax.bar(dict.keys(), averages)
-    plt.show()
+    os.system('cmd /c "streamlit run app.py" ')

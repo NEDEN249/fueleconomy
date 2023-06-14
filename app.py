@@ -7,7 +7,7 @@ import streamlit as st
 #   INITIALIZE
 
 st.set_page_config(layout="wide",
-                   page_icon=":smiley:",
+                   page_icon="⛽",
                    page_title="Fuel Economy Calculator")
 
 # Makes it so everytime we change the filter on the data, it doesn't have to read the excel file again
@@ -38,7 +38,7 @@ df_selection = df.query("Date == @date")
 #st.dataframe(df_selection)
 
 # MAIN PAGE
-st.title(":smiley: Fuel Economy Calculator")
+st.title("⛽ Fuel Economy Calculator")
 st.markdown("##")
 
 # STATS
