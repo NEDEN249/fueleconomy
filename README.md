@@ -34,6 +34,6 @@ cd fueleconomy
 python main.py
 ```
 
-4. Follow the instructions to calculate fuel economy, input data into the .xlxs file (it will create one for you) and show summary data
+4. Follow the instructions to calculate fuel economy, input data into the .xlsx file (it will create one for you) and show summary data
 
 
